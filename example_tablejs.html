@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table id="sampleTable" border="1">
+        <tr>
+            <td>Row1 cell1</td>
+            <td>Row1 cell2</td>
+        </tr>
+        <tr>
+            <td>Row2 cell1</td>
+            <td>Row2 cell2</td>
+        </tr>
+        <tr>
+            <td>Row2 cell1</td>
+            <td>Row2 cell2</td>
+        </tr>
+    </table>
+    <button onclick="AddRow()">Create TR</button>
+
+    <script>
+        function AddRow() {
+            TBL = document.getElementById("sampleTable");
+            var totalRowCount = TBL.rows.length; // 5
+            count = totalRowCount + 1;
+            rowToAdd = document.createElement("tr");
+            col1ToAdd = document.createElement("td");
+            col2ToAdd = document.createElement("td");
+            col1Text = document.createTextNode("Row" + count + " cell1");
+            col2Text = document.createTextNode("Row" + count + "cell2");
+
+            col1ToAdd.appendChild(col1Text);
+            col2ToAdd.appendChild(col2Text);
+
+            rowToAdd.appendChild(col1ToAdd);
+            rowToAdd.appendChild(col2ToAdd);
+
+            TBL.appendChild(rowToAdd);
+        }
+    </script>
+
+</body>
+
+</html>
