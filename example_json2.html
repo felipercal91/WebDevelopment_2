@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p id="id1">Message</p>
+    <script>
+        obj = ""
+        fetch('https://restcountries.com/v2/all')
+            .then(x => {
+                return x.json()
+            })
+            .then(y => {
+                obj = y;
+                p = document.getElementById("id1")
+                    //p.innerHTML = y;
+                p.innerHTML = y[0].name;
+
+            })
+    </script>
+
+</body>
+
+</html>
