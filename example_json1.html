@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p id="ID1">Message</p>
+
+    <script>
+        fetch('https://api.chucknorris.io/jokes/categories')
+            .then(x => {
+                return x.json()
+            })
+            .then(y => {
+                p = document.getElementById("ID1")
+                p.innerHTML = y[2];
+            })
+    </script>
+
+</body>
+
+</html>
