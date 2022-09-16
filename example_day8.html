@@ -1,0 +1,38 @@
+<html>
+
+<body>
+    <button onclick="addTop('0')">Add at the top</button>
+    <button onclick="addEnd('0')">Add at the end</button>
+    <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+    <br>
+    <button onclick="addTop('1')">Add at the top</button>
+    <button onclick="addEnd('1')">Add at the end</button>
+    <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+    <script>
+        UL = document.getElementsByTagName("ul");
+
+        function addEnd(list) {
+            y = document.createElement("li");
+            t = document.createTextNode("New End");
+            y.appendChild(t);
+            UL[list].appendChild(y);
+        }
+
+        function addTop(list) {
+            y = document.createElement("li");
+            t = document.createTextNode("New Top");
+            y.appendChild(t);
+            UL[list].prepend(y);
+        }
+    </script>
+</body>
+
+</html>
