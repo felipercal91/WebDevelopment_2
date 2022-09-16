@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <span><p>Row Number:</p><input type="text" id="rowNumber"></span>
+    <span><p>Col Number:</p><input type="text" id="colNumber"></span>
+    <span><p>Text:</p><input type="text" id="textLabel"></span>
+    <br><br>
+    <button onclick="AddRow()">Add row</button>
+    <button onclick="updateRow()">Update row</button>
+    <table id="myTable" border="1">
+    </table>
+    <script>
+        function AddRow() {
+
+            var Table = document.getElementById("myTable");
+            Table.innerHTML = "";
+            //rn = window.prompt("Input number of rows", 1);
+            //cn = window.prompt("Input number of columns", 1);
+            rn = document.getElementById("rowNumber").value;
+            cn = document.getElementById("colNumber").value;
+            textValue = document.getElementById("textLabel").value;
+            console.log("Enter to function AddRow");
+            console.log(rn);
+
+            for (var r = 0; r < parseInt(rn, 10); r++) {
+                var x = document.getElementById('myTable').insertRow(r);
+                for (var c = 0; c < parseInt(cn, 10); c++) {
+                    var y = x.insertCell(c);
+                    y.innerHTML = textValue + " " + r + " " + textValue + " " + c;
+                }
+            }
+        }
+
+        function updateRow() {
+            console.log("***************************");
+            console.log("Enter function updaterow");
+            textValue = document.getElementById("textLabel").value;
+            console.log("textValue :" + textValue);
+            rn = document.getElementById("rowNumber").value;
+            console.log("rn :" + rn);
+            var x = document.getElementById('myTable').rows[parseInt(rn, 10)].cells;
+            console.log("var x :" + x);
+            cn = document.getElementById("colNumber").value;
+            console.log("cn :" + cn);
+            x[parseInt(cn, 10)].innerHTML = textValue;
+        }
+    </script>
+
+
+</body>
+
+</html>
